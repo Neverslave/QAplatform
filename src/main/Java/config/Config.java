@@ -7,6 +7,7 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.render.ViewType;
 import com.jfinal.template.Engine;
+import controller.BaseController;
 import model._MappingKit;
 import route.MainRoute;
 
@@ -20,7 +21,7 @@ public class Config extends JFinalConfig {
     @Override
     public void configConstant(Constants me){
         PropKit.use("config.txt");
-        me.setDevMode(PropKit.getBoolean("devMode", false));
+        me.setDevMode(PropKit.getBoolean("devMode", true));
         me.setViewType(ViewType.JSP); //设置渲染方式为JSP
     }
 
@@ -28,6 +29,7 @@ public class Config extends JFinalConfig {
     public void configRoute(Routes me) {
 
        me.add(new MainRoute());
+       me.add("/", BaseController.class);
         // me.add("/", IndexController.class); //所有的根目录访问转到这个类 viewpath相对于webapp的位置。可以加到第三个参数。
 
     }
