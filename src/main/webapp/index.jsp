@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <jsp:include page="WEB-INF/views/layout/header.jsp"></jsp:include>
+
 </head>
 
 <body class="site-home" id="LAY_home" style="background-color: #eee;">
@@ -49,7 +49,7 @@
                 <cite class="layui-icon"></cite> 立即下载
             </a>
         </div>
-        <jsp:include page="/main/getversion"></jsp:include>
+
         <div class="site-banner-other">
             <script src='https://git.oschina.net/yubaolee/OpenAuth.Net/star_widget_preview'></script>
         </div>
